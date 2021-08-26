@@ -69,7 +69,6 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            // return view('content');
              return  view("layouts.app");
         }
   

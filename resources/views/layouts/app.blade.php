@@ -102,9 +102,10 @@
                              
                             
                   
-                                <li><a href="../../RTL/default/index.html"><i class="icon-width"></i> <span>RTL version</span></a></li>
                                 <li><a href="/proxy"><i class="icon-width"></i> <span>Proxy</span></a></li>
                                 <li><a href="/user-agents"><i class="icon-width"></i> <span>User Agents</span></a></li>
+                                <li><a href="/links"><i class="icon-width"></i> <span>Links</span></a></li>
+                                <li><a href="/mails"><i class="icon-width"></i> <span>Mails</span></a></li>
   
                              
                              
@@ -134,6 +135,8 @@
                 <div class="content">
 
   @yield('proxy')
+  @yield('link')
+  @yield('mail')
   @yield('user-agent')
               
                     </div>
