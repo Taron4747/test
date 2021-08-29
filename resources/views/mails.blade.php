@@ -67,7 +67,7 @@
 										<div class="form-group">
 											<label class="control-label col-sm-3">Name</label>
 											<div class="col-sm-9">
-												<input type="text" name="name" id="name"  placeholder="example.com" class="form-control">
+												<input type="text" name="name" value="{{old('name')}}" id="name"  placeholder="example.com" class="form-control">
 												@if ($errors->has('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                 @endif
@@ -77,14 +77,14 @@
 										<div class="form-group">
 											<label class="control-label col-sm-3">Description</label>
 											<div class="col-sm-9">
-												<input type="text" name="description" id="description" placeholder="Укажите примечание к пакету." class="form-control">
+												<input type="text" name="description" value="{{old('description')}}" id="description" placeholder="Укажите примечание к пакету." class="form-control">
 											</div>
 										</div>
 
 										<div class="form-group">
 											<label class="control-label col-sm-3">Mail List</label>
 											<div class="col-sm-9">
-												<textarea rows="5" name="mail_list" id="mail_list" cols="5" class="form-control" placeholder=""></textarea>
+												<textarea rows="5" value="{{old('mail_list')}}" name="mail_list" id="mail_list" cols="5" class="form-control" placeholder=""></textarea>
 													@if ($errors->has('mail_list'))
                                     <span class="text-danger">{{ $errors->first('mail_list') }}</span>
                                 @endif

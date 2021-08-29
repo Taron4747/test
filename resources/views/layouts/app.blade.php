@@ -12,6 +12,7 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="assets/css/core.css" rel="stylesheet" type="text/css">
     <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+{{--    <link href="assets/css/bundle.css" rel="stylesheet" type="text/css">--}}
     <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
@@ -54,7 +55,7 @@
         <div class="navbar-collapse collapse" id="navbar-mobile">
 
 
-         
+
 
             <div class="navbar-right">
                 <ul class="nav navbar-nav">
@@ -69,7 +70,7 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right">
-                   
+
 
                             <li><a href="{{ route('logout') }}"><i class="icon-switch2"></i> Logout</a></li>
                         </ul>
@@ -97,25 +98,12 @@
                     <div class="sidebar-category sidebar-category-visible">
                         <div class="category-content no-padding">
                             <ul class="navigation navigation-main navigation-accordion">
-
-                              
-                             
-                            
-                  
+                                <li><a href="/settings"><i class="icon-width"></i> <span>Настройка</span></a></li>
                                 <li><a href="/proxy"><i class="icon-width"></i> <span>Proxy</span></a></li>
+                                <li><a href="/cookie"><i class="icon-width"></i> <span>Cookie</span></a></li>
                                 <li><a href="/user-agents"><i class="icon-width"></i> <span>User Agents</span></a></li>
                                 <li><a href="/links"><i class="icon-width"></i> <span>Links</span></a></li>
                                 <li><a href="/mails"><i class="icon-width"></i> <span>Mails</span></a></li>
-  
-                             
-                             
-                             
-                             
-                               
-
-                            
-                             
-
                             </ul>
                         </div>
                     </div>
@@ -137,13 +125,15 @@
   @yield('proxy')
   @yield('link')
   @yield('mail')
+  @yield('settings')
+  @yield('cookie')
   @yield('user-agent')
-              
+
                     </div>
 
 
                     <div class="footer text-muted">
-                      
+
                     </div>
 
                 </div>

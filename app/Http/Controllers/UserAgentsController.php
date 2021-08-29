@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Chrome;
+use App\Models\Opera;
+use App\Models\Yandex;
 
 class UserAgentsController extends Controller
 {
@@ -22,12 +25,11 @@ class UserAgentsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    protected $tableName =['chrome'=>'general_data_ua_chrome','opera'=>'general_data_ua_opera','yandex'=>'general_data_ua_yabrowser'];
     public function index($value='')
     {
-        $chrome =DB::table('general_data_ua_chrome')->get();
-        $opera =DB::table('general_data_ua_opera')->get();
-        $yandex =DB::table('general_data_ua_yabrowser')->get();
+        $chrome =Chrome::all();
+        $opera =Opera::all();
+        $yandex =Yandex::all();
         $chromeText ='';
         $operaText ='';
         $yandexText ='';
@@ -70,12 +72,22 @@ class UserAgentsController extends Controller
     public function addUserAgent(Request $request)
     {
         $data=$request->all();
-        $table =$this->tableName[$data['table']];
+        if ($data['table'] =='opera') {
+             $modelName =new Opera;
+        }
+         if ($data['table'] =='yandex') {
+             $modelName = new Yandex;
+        }
+       if ($data['table'] =='chrome') {
+             $modelName = new Chrome;
+        }
         $list = explode("\r\n",$data['ua']);
-        DB::table($table)->delete();
+        $modelName->delete();
+
+       
         foreach ($list as $key => $value) {
             if ( $value) {
-                DB::table($table)->insert(['ua'=>$value]);  
+                $modelName->insert(['ua'=>$value]);  
             } 
         }
             return redirect()->back()->with('message', 'Изменения сохранены ');

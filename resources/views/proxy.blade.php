@@ -66,7 +66,7 @@
 										<div class="form-group">
 											<label class="control-label col-sm-3">Package Proxy Name (id)</label>
 											<div class="col-sm-9">
-												<input type="text" name="name" id="name"  placeholder="Укажите ID пакета прокси или имя пакета." class="form-control">
+												<input type="text" name="name" value="{{old('name')}}"  id="name"  placeholder="Укажите ID пакета прокси или имя пакета." class="form-control">
 												@if ($errors->has('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                 @endif
@@ -76,14 +76,14 @@
 										<div class="form-group">
 											<label class="control-label col-sm-3">Description</label>
 											<div class="col-sm-9">
-												<input type="text" name="description" id="description" placeholder="Укажите примечание к пакету." class="form-control">
+												<input type="text" name="description" value="{{old('description')}}"  id="description" placeholder="Укажите примечание к пакету." class="form-control">
 											</div>
 										</div>
 
 										<div class="form-group">
 											<label class="control-label col-sm-3">Proxy List</label>
 											<div class="col-sm-9">
-												<textarea rows="5" name="proxy_list" id="proxy_list" cols="5" class="form-control" placeholder=""></textarea>
+												<textarea rows="5" name="proxy_list" value="{{old('proxy_list')}}"  id="proxy_list" cols="5" class="form-control" placeholder=""></textarea>
 													@if ($errors->has('proxy_list'))
                                     <span class="text-danger">{{ $errors->first('proxy_list') }}</span>
                                 @endif

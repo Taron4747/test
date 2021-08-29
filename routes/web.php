@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ProxyController;
 use App\Http\Controllers\UserAgentsController;
+use App\Http\Controllers\SettingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,15 @@ Route::get('/get-mail/{id}', [App\Http\Controllers\MailsController::class, 'getM
 Route::post('/remove-mail', [App\Http\Controllers\MailsController::class, 'removeMail']);
 
 
+Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'getSettings']);
+Route::post('/setting-data', [App\Http\Controllers\SettingsController::class, 'getSettingsData']);
+Route::post('/add-setting', [App\Http\Controllers\SettingsController::class, 'addSetting']);
+Route::get('/get-setting/{id}', [App\Http\Controllers\SettingsController::class, 'getSettingById']);
+Route::post('/remove-setting', [App\Http\Controllers\SettingsController::class, 'removeSetting']);
+
+
+Route::get('/cookie', [App\Http\Controllers\CookiesController::class, 'getCookie']);
+Route::post('/cookie-data', [App\Http\Controllers\CookiesController::class, 'getCookieData']);
+Route::post('/add-cookie', [App\Http\Controllers\CookiesController::class, 'addCookie']);
+Route::get('/get-cookie/{id}', [App\Http\Controllers\CookiesController::class, 'getCookieById']);
+Route::post('/remove-cookie', [App\Http\Controllers\CookiesController::class, 'removeCookie']);
