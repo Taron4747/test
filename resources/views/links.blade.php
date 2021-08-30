@@ -130,10 +130,11 @@
 										</div>
 										</div>
 				</form>
-									</div>
-									<div class="modal-footer">
+					<div class="modal-footer">
 										<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
 									</div>
+									</div>
+								
 							</div>
 						</div>
 					</div>

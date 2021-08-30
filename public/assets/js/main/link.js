@@ -37,7 +37,7 @@ $(document).ready(function() {
             success: function(response) {
                 if(response.success==1) {
                     $('#linkList').text(response.data.list)
-                    $('#openProxyList').click()
+                    $('#openLinkList').click()
                 }
             },
             headers:{

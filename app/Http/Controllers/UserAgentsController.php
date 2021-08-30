@@ -82,7 +82,7 @@ class UserAgentsController extends Controller
              $modelName = new Chrome;
         }
         $list = explode("\r\n",$data['ua']);
-        $modelName->delete();
+        $modelName->truncate();
 
        
         foreach ($list as $key => $value) {
