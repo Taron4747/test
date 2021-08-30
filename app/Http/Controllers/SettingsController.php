@@ -48,9 +48,7 @@ class SettingsController extends Controller
         {
             foreach ($settings as $setting)
             {
-// dd($setting->proxyData);
-//                 var_dump($setting->linkData->count());
-//                 var_dump($setting->proxyData->count());
+
                 $nestedData['ip_server'] = long2ip($setting->ip_server);
                 $nestedData['site'] =$setting->linkData&&$setting->linkData->count() ? $setting->linkData->name :'';
                 $nestedData['description'] = $setting->description;
@@ -63,9 +61,6 @@ class SettingsController extends Controller
                 $nestedData['persentYandex'] = $setting->persent_ua_yandex;
                 $nestedData['action'] = $this->getActions($setting->id);     
                 $data[] = $nestedData;
-
-
-
             }
             
         }
