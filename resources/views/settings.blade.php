@@ -330,17 +330,12 @@
                     { "data": "description","title": "Description"},
                     { "data": "mode","title": "Change Logic"},
                     { "data": "proxy","title": "Proxy Package"},
-                    { "data": "day_time","title": "Day"},
-                    { "data": "nignht_time","title": "Night"},
+                    { "data": "day_time","title": "Стартовое время"},
+                    { "data": "nignht_time","title": "Если имеется реклама"},
                     { "data": "persentChrome","title": "% Cr"},
                     { "data": "persentOpera","title": "% Op"},
                     { "data": "persentYandex","title": "% Ya "},
                     { "data": "action","title": "Action"},
-
-
-
-
-
                 ],
                 "fnRowCallback": function( nRow ) {
 

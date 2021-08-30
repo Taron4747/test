@@ -40,21 +40,22 @@ class SettingsController extends Controller
     public function getSettingsData(Request $request)
     {
         $data = $request->all();       
-        $settings =  Settings::all();
+        $settings =  Settings::with('linkData','proxyData')->get();
         $totalData = count($settings);
         $totalFiltered = $totalData; 
-
         $data = array();
         if(!empty($settings))
         {
             foreach ($settings as $setting)
             {
-
+// dd($setting->proxyData);
+//                 var_dump($setting->linkData->count());
+//                 var_dump($setting->proxyData->count());
                 $nestedData['ip_server'] = long2ip($setting->ip_server);
-                $nestedData['site'] = $setting->site;
+                $nestedData['site'] =$setting->linkData&&$setting->linkData->count() ? $setting->linkData->name :'';
                 $nestedData['description'] = $setting->description;
                 $nestedData['mode'] = $this->modes[$setting->server_mode];
-                $nestedData['proxy'] = $setting->proxy;
+                $nestedData['proxy'] = $setting->proxyData&&$setting->proxyData->count() ?$setting->proxyData->name:'';
                 $nestedData['day_time'] = $setting->day_time;
                 $nestedData['nignht_time'] = $setting->nignht_time;
                 $nestedData['persentChrome'] = $setting->persent_ua_chrome;
